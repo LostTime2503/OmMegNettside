@@ -1,11 +1,44 @@
-/* Basic reset */
+/* Basic page reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Full-height hero wrapper */
+/* Rouge Script font utility */
+.rouge-script {
+  font-family: 'Rouge Script', cursive;
+}
+
+/* Centered, invisible header */
+header {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  background: transparent;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 20px;
+  transition: color 0.2s;
+}
+
+header nav a:hover {
+  color: #000;
+}
+
+/* Full-height hero */
 .hero {
   position: relative;
   height: 100vh;
@@ -13,42 +46,51 @@
   overflow: hidden;
 }
 
-/* Intro text in the top half */
+/* Intro text */
 .intro-text {
   position: absolute;
-  top: 15%;
-  left: 5%;
+  top: 25%;
+  left: 20%;
   max-width: 45%;
   color: #333;
 }
 
 .intro-text h2 {
-  font-size: 2rem;
+  font-size: 60px;
   margin-bottom: 0.5rem;
 }
 
 .intro-text p {
-  font-size: 1.1rem;
-  line-height: 1.4;
+  font-size: 90px;
+  line-height: 1.2;
 }
 
-/* Box covering middle to bottom */
+/* Hero image */
+.hero-image {
+  position: absolute;
+  bottom: 231px;   /* keeps it overlapping the box */
+  right: 20%;
+  z-index: 2;
+  max-width: 30%;
+  border-radius: 4px;
+}
+
+/* White box at bottom */
 .content-box {
   position: absolute;
-  bottom: 0;        /* ← pin to bottom */
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 300px;    /* your custom height */
-  background-color: #ffffff;
+  height: 300px;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
-
-/* Left text inside box */
 .content-box .text {
   flex: 1;
   max-width: 50%;
@@ -64,15 +106,22 @@
   line-height: 1.5;
 }
 
-/* Right image inside box */
-.content-box .image {
-  flex: 1;
-  max-width: 50%;
-  text-align: right;
+/* New second_section styling */
+.second-section {
+  position: relative;    /* default, so it flows below the hero */
+  padding: 4rem 20px;    /* give it some breathing room */
+  background: #fafafa;   /* or whatever you like */
+  color: #333;
 }
 
-.content-box .image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
+.second-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.second-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
