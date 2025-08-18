@@ -1,16 +1,21 @@
-/* Basic page reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Rouge Script font utility */
+html, body {
+  overflow-x: hidden;
+}
+
+
+/*Font*/
 .rouge-script {
   font-family: 'Rouge Script', cursive;
 }
 
-/* Centered, invisible header */
+/* Usynnelig Header */
 header {
   position: absolute;
   top: 40px;
@@ -38,7 +43,7 @@ header nav a:hover {
   color: #000;
 }
 
-/* Full-height hero */
+/* "Front pagen" det du ser når du åpner nettsiden */
 .hero {
   position: relative;
   height: 100vh;
@@ -46,7 +51,7 @@ header nav a:hover {
   overflow: hidden;
 }
 
-/* Intro text */
+/* Hoved Tekst / Tekst som er ved siden av bilde */
 .intro-text {
   position: absolute;
   top: 25%;
@@ -65,7 +70,7 @@ header nav a:hover {
   line-height: 1.2;
 }
 
-/* Hero image */
+/* Bilde av figur */
 .hero-image {
   position: absolute;
   bottom: 231px;   /* keeps it overlapping the box */
@@ -75,7 +80,7 @@ header nav a:hover {
   border-radius: 4px;
 }
 
-/* White box at bottom */
+/* Hvit boks på bunn av "frontsiden" */
 .content-box {
   position: absolute;
   bottom: 0;
@@ -91,6 +96,7 @@ header nav a:hover {
   z-index: 1;
 }
 
+/* Valgfri tekst i den hvite boksen*/
 .content-box .text {
   flex: 1;
   max-width: 50%;
@@ -106,22 +112,72 @@ header nav a:hover {
   line-height: 1.5;
 }
 
-/* New second_section styling */
+/*Seksjon nummer 2*/
 .second-section {
-  position: relative;    /* default, so it flows below the hero */
-  padding: 4rem 20px;    /* give it some breathing room */
-  background: #fafafa;   /* or whatever you like */
-  color: #333;
+  display: grid;
+  grid-template-columns: 1fr 1fr;    /* two equal columns */
+  width: 100vw;
+  margin: 0;                         /* reset any default page margins */
+  background: #ffffff;
 }
 
-.second-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.square {
+  aspect-ratio: 1 / 1;               /* width to height = 1:1 */
+  overflow: hidden;
 }
 
-.second-section p {
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
+.left-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;        /* space inside the box */
+  text-align: center;   /* center text lines */
+}
+
+.left-box h2 {
+  font-size: 45px;
+  margin-bottom: 0.5rem;
+}
+
+.left-box hr {
+  width: 120px;              /* ← longer line */
+  border: none;
+  border-top: 2px solid #333;
+  margin: 0.5rem 0 1rem;
+}
+
+.left-box p {
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 80%;           /* optional: caps width for readability */
+}
+
+.right-box {
+  /* no extra sizing needed here */
+}
+
+.square-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                 /* fill the square without distortion */
+  display: block;
+}
+
+/*Seksjon nummer 3*/
+.third-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;    /* two equal columns */
+  width: 100vw;
+  margin: 0;                         /* reset any default page margins */
+  background: #ffffff;
+}
+
+/*Seksjon nummer 4*/
+.fourth-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;    /* two equal columns */
+  width: 100vw;
+  margin: 0;                         /* reset any default page margins */
+  background: #ffffff;
 }
